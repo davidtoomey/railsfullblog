@@ -9,6 +9,7 @@ def create
 	if @user && @user.password == params[:password]
     puts "!!!!!!!!!!!!!!!!!! PASSWORD DETECTED!!!!!!!!!!!!!!!!!!!!"
 		session[:user_id] = @user.id
+    render :new
   else
     render 'failed'
 

@@ -9,9 +9,9 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
 
 
-   get '/log-in' => 'sessions#new'
+   get '/login' => 'sessions#new'
 
-   post 'log-in' => "sessions#create"
+   post 'login' => "sessions#create"
 
 
 
