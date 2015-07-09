@@ -1,0 +1,39 @@
+body{
+	background-color: #DD5858;
+	font-family: 'Arvo', serif;
+	color: white;
+
+}
+
+h1{
+	font-family: 'Arvo', serif;
+	color: white;
+	text-align: center;
+}
+
+.field{
+	margin-left: auto;
+	margin-right: auto;
+	width: 700px;
+}
+
+a{
+	/*text-decoration: none;
+*/	color: white;
+}
+
+#post_title, #post_content{
+	border:2px solid white;
+	border-radius:10px;
+	font-family: 'Arvo', serif;	
+	line-height: 13px;
+	font-size: 15px;
+}
+
+#post_title{
+	width: 385px;
+}
+
+#post_content{
+	width: 600px;
+}

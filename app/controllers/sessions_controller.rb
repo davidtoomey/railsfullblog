@@ -9,7 +9,7 @@ def create
 	if @user && @user.password == params[:password]
     puts "!!!!!!!!!!!!!!!!!! PASSWORD DETECTED!!!!!!!!!!!!!!!!!!!!"
 		session[:user_id] = @user.id
-    redirect_to controller: "users",action: "show", id: @user.id
+    redirect_to controller: "posts",action: "index"
   else
     render 'failed'
 
