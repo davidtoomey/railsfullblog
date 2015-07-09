@@ -1,4 +1,12 @@
-<p id="notice"><%= notice %></p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+    <link rel="stylesheet" type="text/css" href=".css">
+    <meta charset="UTF-8">
+  </head>
+  <body>
+        <p id="notice"><%= notice %></p>
 
 <p>
   <strong>User:</strong>
@@ -26,3 +34,5 @@
   <%= f.hidden_field :post_id, :value => @post.id %>
   <%= f.submit "Create" %>
 <% end %>
+  </body>
+</html>
