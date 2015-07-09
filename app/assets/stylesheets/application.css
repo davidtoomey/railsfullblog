@@ -10,14 +10,34 @@ body{
 	background-color: #DD5858;
 }
 
-section{
-	float: right;
-	width: 900px;
+.container{
+	float: left;
+	width: 615px;
 	border-style: solid;
 	border-bottom-left-radius: 10px;
 	color: white;
+	margin-right: auto;
+	margin-left: auto;
+	height: 350px;
+	position: auto;
+}
+
+.container2{
+	float: right;
+	width: 615px;
+	border-style: solid;
+	border-bottom-left-radius: 10px;
+	color: white;
+
 	margin-right: 150px;
 	height: 300px;
+
+	/*margin-top:-307px;*/
+	margin-right: auto;
+	margin-left: auto;
+	height: 350px;
+	position: auto;
+
 
 }
 
@@ -25,6 +45,7 @@ section{
 h2{
 	font-family: 'Arvo', serif;
 	color: white;
+	text-align:center;
 }
 
 h2 .login .signup{
@@ -34,23 +55,43 @@ h2 .login .signup{
 
 .login{
 	float: left;
+	height:auto;
+	width:200px;
 	margin-left: 30px;
+
 	
+
+	position: relative;
+	display:block;
+
+	/*float:right;*/
+
 }
 
 .signup{
 	float: right;
+
 	margin-right: 50px;
 	
+
+	height:auto;
+	width:500px;
+	position: relative;
+
 	font-size: 15px;
+	display:block;
 }
 
 input{
 	border:2px solid white;
 	border-radius:10px;
 	height: 22px;
-	width: 230px;
+	width: 400px;
+	margin:3px;
+	padding:5px;
+
 }
+
 
 .vertical-line{
   width: 3px; 
@@ -72,7 +113,11 @@ li{
 
 nav{
     text-align: center;
-    margin-top: 350px;
+    /*margin-top: 350px;*/
+
+}
+.container input{
+	margin-left:110px;
 }
  *= require_tree .
  *= require_self

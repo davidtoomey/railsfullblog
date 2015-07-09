@@ -10,36 +10,41 @@
 		<div id="header">
 			<h1>Login or Register</h1>
 		</div>
-		<section class="container">
-		    <div class="login">
-		      <h2>Login</h2>
- 				
- 				<%= form_tag do%>
-	
-				<%= text_field_tag(:username) %>
-				<%= password_field_tag(:password) %>
-				<%= submit_tag("Login") %>
-
-				<%end%>
-		    </div>
-		    <div class="vertical-line"></div>
-		    <div class="signup">
-		        <h2>Register</h2>
-
-				<%= form_tag do%>
-					
-				<%= text_field_tag(:username) %>
-				<%= password_field_tag(:password) %>
-				<%= text_field_tag(:email) %>
-				<%= submit_tag("Register") %>
-				<%end%>
-		    </div>
 			<nav>
 			  	<ul>
 			    <li><a href="landing.html">Home</a></li>
 			    </ul>
 			</nav>
+		<section class="container">
+
+		      <h2>Login</h2>
+ 				
+ 				<%= form_tag html: {:class => "login"} do%>
+	
+				<%= text_field_tag(:username,"Username") %>
+				<%= password_field_tag(:password,"Password") %>
+				<%= submit_tag("Login") %>
+
+				<%end%>
+
+				<!-- <div class="vertical-line"></div>	 -->	  
 		</section>
+		<section class="container2">
+			<h2> Register </h2>
+				<%= form_for User.new, url: {controller: "users" ,action: "create"}, html: {:class => "signup"} do |f| %>
+					
+					<%= f.text_field :username, :placeholder => "Username" %>
+					
+				  	<%= f.text_field :email, :placeholder => "email" %>
+				  	
+				    <%= f.password_field :password, :placeholder => "password" %>
+				 	<%= f.submit "Create" %>
+				<% end %> 
+	
+
+		</section
+
+
 </body>
 </html>
 
