@@ -14,25 +14,28 @@
 		    <div class="login">
 		      <h2>Login</h2>
  				
- 				<%= form_tag do%>
+ 				<%= form_tag html: {:class => "login"} do%>
 	
 				<%= text_field_tag(:username) %>
 				<%= password_field_tag(:password) %>
 				<%= submit_tag("Login") %>
 
 				<%end%>
+
 		    </div>
 		    <div class="vertical-line"></div>
 		    <div class="signup">
-		        <h2>Register</h2>
 
-				<%= form_tag do%>
-					
-				<%= text_field_tag(:username) %>
-				<%= password_field_tag(:password) %>
-				<%= text_field_tag(:email) %>
-				<%= submit_tag("Register") %>
-				<%end%>
+				<h1> Register </h1>
+				<%= form_for User.new, url: {controller: "users" ,action: "create"}, html: {class: "signup"} do |f| %>
+					<%= f.label :username %>
+					<%= f.text_field :username %>
+					<%= f.label :email %>
+				  	<%= f.text_field :email %>
+				  	<%= f.label :password %>
+				    <%= f.text_field :password %>
+				 	<%= f.submit "Create" %>
+				<% end %> 
 		    </div>
 			<nav>
 			  	<ul>
