@@ -10,7 +10,7 @@
 
 <p>
   <strong>User:</strong>
-  <%= @post.user_id %>
+  <%= @user.username %>
 </p>
 <h1>Title</h1><%=@post.title %>
 <p>
@@ -21,8 +21,9 @@
 
 <p> comments </p>
 <% @comments.each do |comment| %>
-      <tr>
-        <td><%= comment.body %></td>
+      <ul>
+        <li><%= comment.body %></li>
+      </ul>
        <%end%>
        
         <%= link_to 'Edit', edit_post_path(@post) %> |
