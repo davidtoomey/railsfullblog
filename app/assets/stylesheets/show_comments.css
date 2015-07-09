@@ -1,0 +1,39 @@
+body{
+	background-color: #DD5858;
+	color: black;
+	font-family: 'Arvo', serif;
+}
+
+p,h3,h1{
+	font-family: 'Arvo', serif;
+	color: white;
+}
+
+a{
+	color: white;
+}
+
+.comment_box{
+	width: 400px;
+	margin-right: auto;
+	margin-left: auto;
+	padding: auto;
+}
+
+#comment_body{
+	border-style: solid;
+	border-color: white;
+	border-radius: 3px;
+	font-family: 'Arvo', serif;
+	font-size: 12px;
+}
+
+p{
+	font-style: italic;
+}
+
+.header{
+	margin-right: auto;
+	margin-left: auto;
+	width: 200px;
+}

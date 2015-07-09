@@ -17,6 +17,11 @@ def create
   
 end
 
+ def destroy
+    session.clear
+    redirect_to '/'
+end
+
 def failed
 end
 

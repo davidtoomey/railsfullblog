@@ -1,29 +1,39 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>User:</strong>
-  <%= @user.username %>
-</p>
-<h1>Title</h1><%=@post.title %>
-<p>
-  <strong>Content:</strong>
-  <%= @post.content %>
-</p>
-
-
-<p> comments </p>
-<% @comments.each do |comment| %>
-      <ul>
-        <li><%= comment.body %></li>
-      </ul>
-       <%end%>
-       
-        <%= link_to 'Edit', edit_post_path(@post) %> |
-        <%= link_to 'Back', posts_path %>
-
-<h1> Leave a comment </h1>
-<%= form_for Comment.new, url: {controller: "comments" ,action: "create"}, html: {class: "comment_form"} do |f| %>
-  <%= f.text_area :body, size: "60x12" %>
-  <%= f.hidden_field :post_id, :value => @post.id %>
-  <%= f.submit "Create" %>
-<% end %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Show Comments</title>
+    <%=stylesheet_link_tag 'show_comments.css'%>
+    <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+        <div class="header"
+          <p id="notice"><%= notice %></p>
+          <p>
+            <strong>User:</strong>
+            <%= @user.username %>
+          </p>
+          <h3>Title</h3><%=@post.title %>
+          <p>
+            <strong>Content:</strong>
+            <%= @post.content %>
+          </p>
+          <p> Comments: </p>
+            <% @comments.each do |comment| %>
+              <ul>
+                <li><%= comment.body %></li>
+              </ul>
+            <%end%>
+            <%= link_to 'Edit', edit_post_path(@post) %> |
+            <%= link_to 'Back', posts_path %>
+        </div>
+          <div class="comment_box">
+          <h1> Leave a comment </h1>
+          <%= form_for Comment.new, url: {controller: "comments" ,action: "create"}, html: {class: "comment_form"} do |f| %>
+            <%= f.text_area :body, size: "60x12" %>
+            <%= f.hidden_field :post_id, :value => @post.id %>
+            <%= f.submit "Create" %>
+          <% end %>
+          </div>
+  </body>
+</html>
