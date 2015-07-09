@@ -27,7 +27,7 @@ class CommentsController < ApplicationController
     @comment = Comment.new(comment_params)
     puts "ASSSSSSSSSSSSSSSSSSSSS"
     puts @comment.inspect
-    @user_id = session[:user_id]
+    @comment.user_id = session[:user_id]
     @post_id = params[:comment][:post_id]
     @body = params[:comment][:body]
     puts "ASSSSSSSSSSSSSSSSSSSSS"
