@@ -18,7 +18,7 @@ section{
 	color: white;
 	margin-right: 150px;
 	height: 300px;
-	position: relative;
+
 }
 
 
@@ -35,13 +35,13 @@ h2 .login .signup{
 .login{
 	float: left;
 	margin-left: 30px;
-	position: relative;
+	
 }
 
 .signup{
 	float: right;
 	margin-right: 50px;
-	position: relative;
+	
 	font-size: 15px;
 }
 
@@ -77,3 +77,12 @@ nav{
  *= require_tree .
  *= require_self
  */
+
+
+.form {
+	display: block;
+}
+
+.registration_form {
+	display: block;
+}
