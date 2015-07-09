@@ -10,5 +10,19 @@
   <%= @post.content %>
 </p>
 
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
+
+<p> comments </p>
+<% @comments.each do |comment| %>
+      <tr>
+        <td><%= comment.body %></td>
+       <%end%>
+       
+        <%= link_to 'Edit', edit_post_path(@post) %> |
+        <%= link_to 'Back', posts_path %>
+
+<h1> Leave a comment </h1>
+<%= form_for Comment.new, url: {controller: "comments" ,action: "create"}, html: {class: "comment_form"} do |f| %>
+  <%= f.text_area :body, size: "60x12" %>
+  <%= f.hidden_field :post_id, :value => @post.id %>
+  <%= f.submit "Create" %>
+<% end %>
