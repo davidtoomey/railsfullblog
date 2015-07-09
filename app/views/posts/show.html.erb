@@ -7,21 +7,24 @@
     <meta charset="UTF-8">
   </head>
   <body>
+
         <div class="header"
           <p id="notice"><%= notice %></p>
           <p>
             <strong>User:</strong>
             <%= @user.username %>
           </p>
-          <h3>Title</h3><%=@post.title %>
+          <h3>Title: <%=@post.title %> </h3>
           <p>
             <strong>Content:</strong>
             <%= @post.content %>
           </p>
           <p> Comments: </p>
             <% @comments.each do |comment| %>
+            
               <ul>
-                <li><%= comment.body %></li>
+                <li><p><%= comment.user.username unless comment.user.nil? %></p><p><%= comment.body %><p></li>
+                
               </ul>
             <%end%>
             <%= link_to 'Edit', edit_post_path(@post) %> |
