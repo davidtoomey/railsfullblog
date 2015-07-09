@@ -10,8 +10,8 @@
   
   
 
-  <%= link_to 'Account Details', {:controller => 'users', :action => 'edit', :id => session[:user_id]} %>
-  <%= link_to 'Profile', {:controller => 'users', :action => 'show', :id => session[:user_id]} %>
+  <%= link_to 'Account Details', {:controller => 'users', :action => 'edit', :id => session[:user_id] || '#id'} %>
+  <%= link_to 'Profile', {:controller => 'users', :action => 'show', :id => session[:user_id] || '#id'} %>
   <%= link_to 'Logout', {:controller => 'sessions', :action => 'destroy'} %>
 </div>
 
