@@ -1,4 +1,16 @@
+
+  <%=stylesheet_link_tag 'headernav.css'%>
+
+
 <p id="notice"><%= notice %></p>
+
+<div class="headernav">
+  
+  <%= link_to 'Account Details', {:controller => 'users', :action => 'edit', :id => session[:user_id]} %>
+  <%= link_to 'Profile', {:controller => 'users', :action => 'show', :id => session[:user_id]} %>
+  <%= link_to 'Logout', {:controller => 'sessions', :action => 'destroy'} %>
+</div>
+
 
 <h1>Listing Posts</h1>
 
@@ -19,7 +31,6 @@
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-        <td><%= link_to 'Comment', Comment %></td>
       </tr>
     <% end %>
   </tbody>

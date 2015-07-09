@@ -7,8 +7,12 @@
     <meta charset="UTF-8">
   </head>
   <body>
+<<<<<<< HEAD
 
     <%= session[:user_id]%>
+=======
+        <div class="header"
+>>>>>>> f4acd6f7c072e673b9974b3baee1e73a29d0d1a5
           <p id="notice"><%= notice %></p>
           <p>
             <strong>User:</strong>
@@ -29,6 +33,7 @@
             <%end%>
             <%= link_to 'Edit', edit_post_path(@post) %> |
             <%= link_to 'Back', posts_path %>
+        </div>
           <div class="comment_box">
           <h1> Leave a comment </h1>
           <%= form_for Comment.new, url: {controller: "comments" ,action: "create"}, html: {class: "comment_form"} do |f| %>
