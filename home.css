@@ -1,0 +1,25 @@
+#header{
+	text-align: center;
+	color: black;
+	font-family: 'Arvo', serif;
+	font-size: 35px;
+	padding: 150px;
+	/*visibility: hidden;*/
+}
+
+body{
+	background-color: #DD5858;
+}
+
+a{
+	text-decoration: none;
+	color: white;
+}
+
+ul{
+	list-style: none;
+	text-align: center;
+}
+nav{
+	margin-bottom: 100px;
+}
