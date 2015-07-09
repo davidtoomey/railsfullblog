@@ -22,10 +22,18 @@ a{
 
 #comment_body{
 	border-style: solid;
+	border-color: white;
 	border-radius: 3px;
-	color: white;
+	font-family: 'Arvo', serif;
+	font-size: 12px;
 }
 
 p{
 	font-style: italic;
+}
+
+.header{
+	margin-right: auto;
+	margin-left: auto;
+	width: 200px;
 }
