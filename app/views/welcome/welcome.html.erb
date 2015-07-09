@@ -8,18 +8,20 @@
 
 <h1> hello </h1>
 
+<h1> Register </h1>
+<%= form_for User.new, url: {controller: "users" ,action: "create"}, html: {class: "registration_form"} do |f| %>
+	<%= f.label :username %>
+	<%= f.text_field :username %>
+	<%= f.label :email %>
+  	<%= f.text_field :email %>
+  	<%= f.label :password %>
+    <%= f.text_field :password %>
+ 	<%= f.submit "Create" %>
+<% end %> 
+
+
 
 </body>
-</html>
-
-
-	<head>
-	</head>
-
-	<body>
-	<a href="/login">LOGIN</a>
-	<h1>Welcome!</h1>
-	</body>
 
 </html>
 
