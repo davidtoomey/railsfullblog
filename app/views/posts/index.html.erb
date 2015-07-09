@@ -1,17 +1,21 @@
 
   <%=stylesheet_link_tag 'headernav.css'%>
+  <%=stylesheet_link_tag 'posts.css'%>
+ 
 
 
 <p id="notice"><%= notice %></p>
 
 <div class="headernav">
   
+  
+
   <%= link_to 'Account Details', {:controller => 'users', :action => 'edit', :id => session[:user_id]} %>
   <%= link_to 'Profile', {:controller => 'users', :action => 'show', :id => session[:user_id]} %>
   <%= link_to 'Logout', {:controller => 'sessions', :action => 'destroy'} %>
 </div>
 
-
+<div class="postcontainer">
 <h1>Listing Posts</h1>
 
 <table>
@@ -26,7 +30,7 @@
   <tbody>
     <% @posts.reverse.each do |post| %>
       <tr>
-        <td><div><%= post.user.username unless post.user.nil? %><span><%= post.created_at %></span></div></td>
+        <td><div><%= post.user.username unless post.user.nil? %><span><br><%= post.created_at %></span></div></td>
         <td><%= post.content %></td>
         <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
@@ -36,6 +40,8 @@
   </tbody>
 </table>
 
+
 <br>
 
 <%= link_to 'New Post', new_post_path %>
+</div>
