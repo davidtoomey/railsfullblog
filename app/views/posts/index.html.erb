@@ -2,6 +2,7 @@
   <%=stylesheet_link_tag 'headernav.css'%>
   <%=stylesheet_link_tag 'posts.css'%>
  
+ <link href='http://fonts.googleapis.com/css?family=Arvo' rel='stylesheet' type='text/css'>
 
 
 <p id="notice"><%= notice %></p>
@@ -10,8 +11,11 @@
   
   
 
+
   <%= link_to 'Account Details', {:controller => 'users', :action => 'edit', :id => session[:user_id] || '#id'} %>
   <%= link_to 'Profile', {:controller => 'users', :action => 'show', :id => session[:user_id] || '#id'} %>
+  <%= link_to 'Account Details', {:controller => 'users', :action => 'edit', :id => session[:user_id] || '#id'}%>
+  <%= link_to 'Profile', {:controller => 'users', :action => 'show', :id => session[:user_id] || '#id'}%>
   <%= link_to 'Logout', {:controller => 'sessions', :action => 'destroy'} %>
 </div>
 

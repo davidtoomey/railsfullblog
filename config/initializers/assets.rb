@@ -11,6 +11,7 @@ Rails.application.config.assets.precompile += %w( headernav.css )
 
 
 Rails.application.config.assets.precompile += %w( show_comments.css )
+Rails.application.config.assets.precompile += %w( profiles.css )
 
 
 # Add additional assets to the asset load path
