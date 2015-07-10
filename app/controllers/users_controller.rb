@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
 
@@ -28,7 +28,7 @@ class UsersController < ApplicationController
   def create
 
     @user = User.new(user_params)
-    session[:user_id] = @user.id
+    
     
 
     respond_to do |format|
@@ -39,6 +39,7 @@ class UsersController < ApplicationController
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
+      session[:user_id] = @user.id
     end
   end
 
