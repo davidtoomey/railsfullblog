@@ -14,11 +14,17 @@
             <strong>User:</strong>
             <%= @user.username %>
           </p>
+          
+          <div class="post_title">
           <h3>Title: <%=@post.title %> </h3>
+        </div>
+          
+          <div class="post_content">
           <p>
             <strong>Content:</strong>
             <%= @post.content %>
           </p>
+        </div>
           <p> Comments: </p>
             <% @comments.each do |comment| %>
             

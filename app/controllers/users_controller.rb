@@ -11,6 +11,10 @@
   # GET /users/1
   # GET /users/1.json
   def show
+    puts '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
+    puts params.inspect
+    @user = User.where(id: params[:id]).first
+    @posts = Post.where(user_id: params[:id])
     
   end
 
