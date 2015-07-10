@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
 
@@ -32,7 +32,7 @@ class UsersController < ApplicationController
   def create
 
     @user = User.new(user_params)
-    session[:user_id] = @user.id
+    
     
 
     respond_to do |format|
