@@ -1,4 +1,4 @@
-class UsersController < ApplicationController
+ class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
 
@@ -11,6 +11,10 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    puts '!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!'
+    puts params.inspect
+    @user = User.where(id: params[:id]).first
+    @posts = Post.where(user_id: params[:id])
     
   end
 
@@ -28,7 +32,7 @@ class UsersController < ApplicationController
   def create
 
     @user = User.new(user_params)
-    session[:user_id] = @user.id
+    
     
 
     respond_to do |format|
@@ -39,6 +43,7 @@ class UsersController < ApplicationController
         format.html { render :new }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
+      session[:user_id] = @user.id
     end
   end
 
@@ -59,12 +64,14 @@ class UsersController < ApplicationController
   # DELETE /users/1
   # DELETE /users/1.json
   def destroy
+    @current_user = User.where(id: session[:user_id]).first
+    if @current_user.admin == true
     @user.destroy
-    respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to users_url
+  else 
+    render '/notadmin'
   end
+end
 
   private
     # Use callbacks to share common setup or constraints between actions.

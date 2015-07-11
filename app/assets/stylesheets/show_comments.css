@@ -37,3 +37,11 @@ p{
 	margin-left: auto;
 	width: 200px;
 }
+
+.post_title {
+	background-color: black;
+}
+
+.post_content {
+	background-color: black;
+}

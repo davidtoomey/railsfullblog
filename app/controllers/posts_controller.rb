@@ -12,6 +12,7 @@ class PostsController < ApplicationController
   def show
     @comments = Comment.where(post_id: params[:id])
     @user = User.where(id: session[:user_id]).first
+    @posts = Post.where(user_id: params[:id])
 
   end
 
