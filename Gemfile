@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-roup :development do         
+group :development do         
   gem 'sqlite3'   
 end   
 group :production do         
