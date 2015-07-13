@@ -1,6 +1,6 @@
  class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
-
+  
 
   # GET /users
   # GET /users.json
@@ -72,6 +72,8 @@
     render '/notadmin'
   end
 end
+
+
 
   private
     # Use callbacks to share common setup or constraints between actions.
