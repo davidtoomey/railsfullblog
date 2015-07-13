@@ -43,10 +43,7 @@ ActiveRecord::Schema.define(version: 20150710170425) do
     t.string   "record_signup"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.boolean  "admin"
-
   end
 
 end
