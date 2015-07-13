@@ -11,6 +11,5 @@ validates_presence_of :email
 validates_uniqueness_of :username
 validates_uniqueness_of :email
 
-scope :signed_in_today, -> {   where('last_sign_in between ? and ?', Time.now-1.day, Time.now) }
 
 end
