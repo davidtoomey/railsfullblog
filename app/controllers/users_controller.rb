@@ -21,7 +21,7 @@
   # GET /users/new
   def new
     @user = User.new
-  end
+    end
 
   # GET /users/1/edit
   def edit
@@ -33,10 +33,20 @@
 
     @user = User.new(user_params)
     
-    
-
     respond_to do |format|
       if @user.save
+        puts 'SENDING EEEEEEEEEEEEEEEEEEEEEMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMAAAAAAAAAAAAAAAAAAAAAAAAAAAIIIIIIIIIIIIILLLLLLLLLLLLLLLL'
+        puts params[:username]
+        m = Mandrill::API.new(ENV['mandrill_api'])
+        message = {
+        :subject=> "Welcome to D'blog",
+        :from_name=> "The D'blog team" ,
+        :text=> 'we hope you like our blog',
+        :to=>[{:email=> @user.email , :name=> @user.username}],
+        :from_email=> 'support@dblog.com',
+      }
+  sending = m.messages.send message
+  puts sending
         format.html { redirect_to @user, notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
@@ -46,6 +56,7 @@
       session[:user_id] = @user.id
     end
   end
+
 
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json

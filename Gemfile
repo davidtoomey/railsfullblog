@@ -1,5 +1,5 @@
 source 'https://rubygems.org'
-gem 'mandrill-api'
+gem 'mandrill-api', require: 'mandrill'
 
 group :development do         
   gem 'sqlite3'   
