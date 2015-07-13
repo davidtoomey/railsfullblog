@@ -1,8 +1,4 @@
 class User < ActiveRecord::Base
- 
-def append_random_id     
-  user.username = user.username + (rand*10000).ceil 
-end
 
 
 has_many :posts, dependent: :destroy
@@ -13,6 +9,7 @@ validates_uniqueness_of :email
 
 validates :username, length: {minimum: 4, maximum: 30}
 validates :email, length: {minimum: 1}
+validates :password, confirmation:true, presence:true
 
 
 end

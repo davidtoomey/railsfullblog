@@ -27,7 +27,7 @@
 
 				<%end%>
 
-				<!-- <div class="vertical-line"></div>	 -->	  
+					  
 		</section>
 		<section class="container2">
 			<h2> Register </h2>
@@ -38,6 +38,8 @@
 				  	<%= f.text_field :email, :placeholder => "email" %>
 				  	
 				    <%= f.password_field :password, :placeholder => "password" %>
+				    <%= f.password_field :password_confirmation, :placeholder => "Re-Enter Password to Verify..." %>
+
 				 	<%= f.submit "Create" %>
 				<% end %> 
 	
