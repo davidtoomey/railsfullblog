@@ -53,7 +53,7 @@ group :development, :test do
 
   gem 'rails_12factor', group: :production
 
-  ruby "2.1.6"
+  ruby "2.2.2"
 
 end
 
