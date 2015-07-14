@@ -5,6 +5,7 @@ class PostsController < ApplicationController
   # GET /posts.json
   def index
     @posts = Post.last(20)
+    @users = User.all 
   end
 
   # GET /posts/1
@@ -12,7 +13,7 @@ class PostsController < ApplicationController
   def show
     @comments = Comment.where(post_id: params[:id])
     @user = User.where(id: session[:user_id]).first
-    @posts = Post.where(user_id: params[:id])
+
 
   end
 
@@ -59,7 +60,7 @@ class PostsController < ApplicationController
 
   # DELETE /posts/1
   # DELETE /posts/1.json
-  def destroy
+  def destroy ß
     @post.destroy
     respond_to do |format|
       format.html { redirect_to posts_url, notice: 'Post was successfully destroyed.' }

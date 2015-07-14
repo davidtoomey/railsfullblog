@@ -1,11 +1,20 @@
 <%= stylesheet_link_tag 'profiles.css' %>
 <%= stylesheet_link_tag 'posts.css' %>
+<%=stylesheet_link_tag 'headernav.css'%>
+
+<div class="headernav">
+  <%= link_to 'home', {:controller => 'welcome', :action => 'welcome'} %>
+  <%= link_to 'newsfeed',{:controller => 'posts', :action => 'index'} %>
+  <%= link_to 'Account Details', {:controller => 'users', :action => 'edit', :id => session[:user_id] || '#id'}%>
+  <%= link_to 'Profile', {:controller => 'users', :action => 'show', :id => session[:user_id] || '#id'}%>
+  <%= link_to 'Logout', {:controller => 'sessions', :action => 'destroy'} %>
+</div>
 
 <div class="profilecontainer">
 <p id="notice"><%= notice %></p>
 
 <% if @user.admin == true %>
-	<h1> This user is an admin <h1>
+	<h1> [ADMIN] <h1>
 		<% end %>
 
 <p>

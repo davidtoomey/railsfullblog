@@ -15,8 +15,6 @@ a{
 
 .comment_box{
 	width: 400px;
-	margin-right: auto;
-	margin-left: auto;
 	padding: auto;
 }
 
@@ -33,15 +31,11 @@ p{
 }
 
 .header{
-	margin-right: auto;
-	margin-left: auto;
 	width: 200px;
 }
+.comment_display {
+	background-color: rgba(0,0,0,.5);
+	width:400px;
+	word-wrap: break-word;
 
-.post_title {
-	background-color: black;
-}
-
-.post_content {
-	background-color: black;
 }

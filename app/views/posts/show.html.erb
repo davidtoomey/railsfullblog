@@ -12,28 +12,31 @@
         <div class="header"
           <p id="notice"><%= notice %></p>
           <p>
-            <strong>User:</strong>
+            <strong>Logged in As:</strong>
             <%= @user.username %>
           </p>
-          
+      <div class ="post_comment_display">
           <div class="post_title">
-          <h3>Title: <%=@post.title %> </h3>
+          <h3>Title:<br> <%=@post.title %> </h3>
         </div>
           
           <div class="post_content">
           <p>
-            <strong>Content:</strong>
+            <strong>Content:</strong> <br>
             <%= @post.content %>
           </p>
         </div>
-          <p> Comments: </p>
+        <div class="comment_display">
+          <h2> Comments: </h2>
             <% @comments.each do |comment| %>
             
               <ul>
-                <li><p><%= comment.user.username unless comment.user.nil? %></p><p><%= comment.body %><p></li>
+                <li><p> User: <%= comment.user.username unless comment.user.nil? %></p><p><%= comment.body %><p></li>
                 
               </ul>
             <%end%>
+          </div>
+        </div>
             <%= link_to 'Edit', edit_post_path(@post) %> |
             <%= link_to 'Back', posts_path %>
         </div>

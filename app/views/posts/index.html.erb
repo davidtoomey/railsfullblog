@@ -8,13 +8,19 @@
 <p id="notice"><%= notice %></p>
 
 <div class="headernav">
+
   
   
 
 
+  <%= link_to 'Account Details', {:controller => 'users', :action => 'edit', :id => session[:user_id] || '#id'} %>
+  <%= link_to 'Profile', {:controller => 'users', :action => 'show', :id => session[:user_id] || '#id'} %>
 
+  <%= link_to 'home', {:controller => 'welcome', :action => 'welcome'} %>
+  <%= link_to 'newsfeed',{:controller => 'posts', :action => 'index'} %>
   <%= link_to 'Account Details', {:controller => 'users', :action => 'edit', :id => session[:user_id] || '#id'}%>
   <%= link_to 'Profile', {:controller => 'users', :action => 'show', :id => session[:user_id] || '#id'}%>
+
   <%= link_to 'Logout', {:controller => 'sessions', :action => 'destroy'} %>
 </div>
 
