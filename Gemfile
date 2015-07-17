@@ -12,7 +12,8 @@ gem 'therubyracer'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
 # Use sqlite3 as the database for Active Record
-
+# Require Amazon s3
+# gem 'aws-s3', :require => 'aws/s3'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
